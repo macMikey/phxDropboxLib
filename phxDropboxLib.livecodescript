@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// phxDropboxLib 1.11
+// phxDropboxLib 1.12
 //
 // (c) 2001-2016 Phoenix Sistemi & Automazione s.a.g.l. - Muralto (TI)
 // Switzerland - All Rights Reserved Worldwide.
@@ -47,13 +47,14 @@
 //         : Changes are by Mike Kerner, marked as: #mikey
 // 1.10  : Fixed the phx_DropboxAvailable to recognize a different error message from dropbox and to verify availability.
 // 1.11  : Fixed typo in the phx_DropboxAvailable.  Mikey fixing his own mistake...
+// 1.12  : Mikey: It looks like the error message that dropbox is returning in response to the query that phx_dropboxAvailable is sending has changed since 1.11.  Changed what we're looking for.
 //
 // ------------------------------------------------------------------
 
 //
 // ----------------------------- constant ----------------------------
 //
-constant phx_DropboxLibVer = "1.11"
+constant phx_DropboxLibVer = "1.12"
 constant unreservedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~"
 
 //
@@ -229,7 +230,7 @@ function phx_DropboxAvailable
    # no, there is no other good way to do it.
    put "https://api.dropbox.com/1/oauth/access_token?" into tURL #v. 1.11 #v. 1.10
    put  URL tUrl into tAnswer
-   if tAnswer begins with ( "{" & quote & "error" & quote) then return true
+   if tAnswer begins with ( "{" & quote & "error_description" & quote) then return true #v. 1.12 error message changed?
    else return false
 end phx_DropboxAvailable
 
