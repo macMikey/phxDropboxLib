@@ -1,4 +1,7 @@
+NOTE:  This is just a pandoc-converted version of the phxDropboxLib.rtf file.  Sorry if the formatting is crude.  The original is much better-looking.
+
 *phxDropboxLib v1.12*
+
 **Introduction:**
 
 <span style="text-decoration: none"><span
