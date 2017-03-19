@@ -1,4 +1,9 @@
-NOTE:  This is just a pandoc-converted version of the phxDropboxLib.rtf file.  Sorry if the formatting is crude.  The original is much better-looking.
+*phxDropboxLib v1.13*
+Converted to a script-only-stack and dumped the binary pieces.
+Removed the version history goodness from the script
+
+
+NOTE:  The rest of this file is just a pandoc-converted version of the phxDropboxLib.rtf file.  Sorry if the formatting is crude.  The original is much better-looking.
 
 *phxDropboxLib v1.12*
 
