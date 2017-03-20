@@ -1,3 +1,5 @@
+script "phxDropboxLib"
+
 constant phx_DropboxLibVer = "1.13"
 constant unreservedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~"
 
