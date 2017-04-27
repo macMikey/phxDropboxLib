@@ -1,6 +1,7 @@
-script "phxDropboxLib"
+﻿script "phxDropboxLib"
 
-constant phx_DropboxLibVer = "1.13"
+
+constant phx_DropboxLibVer = "1.14"
 constant unreservedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~"
 
 //
@@ -487,22 +488,21 @@ end phx_DropboxWriteFile
 //
 // --------------- phx_DropboxCreateLinkToFile --------------------
 // #v. 1.07 TKD 2013-09-17
-//
 function phx_DropboxCreateLinkToFile pRoot, pPath, pShortURL
-      if verifyNoInit() then return "Err: Bad Initialization"
-      --
+   if verifyNoInit() then return "Err: Bad Initialization"
+   --
    put rfcURLEncode(pPath,true) into pPath #v. 1.08 mikey added true so oath and path coding can use same function #v. 1.06 Mikey
-    if ( (pRoot is not "dropbox") and (pRoot is not "sandbox") ) then return "Err: Invalid root param"
-      
-      put "https://api.dropbox.com/1/shares/" & pRoot & "/" & pPath & "?" into tURL
-      if pShortURL is true then
-            put "short_url=true" & "&" after tURL
-      else
-            put "short_url=false" & "&" after tURL
-      end if
-      put prepareOauth() after tURL
-      POST empty to URL tUrl
-      put it into tAnswer
-      if tAnswer contains "error" then return "Err: Unable to create share" & cr & tAnswer
-      else return tAnswer
+   if ( (pRoot is not "dropbox") and (pRoot is not "sandbox") ) then return "Err: Invalid root param"
+   
+   put "https://api.dropbox.com/1/shares/" & pRoot & "/" & pPath & "?" into tURL
+   if pShortURL is true then
+      put "short_url=true" & "&" after tURL
+   else
+      put "short_url=false" & "&" after tURL
+   end if
+   put prepareOauth() after tURL
+   POST empty to URL tUrl
+   put it into tAnswer
+   if tAnswer contains "error" then return "Err: Unable to create share" & cr & tAnswer
+   else return tAnswer
 end phx_DropboxCreateLinkToFile
