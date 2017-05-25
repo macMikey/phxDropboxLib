@@ -1,3 +1,5 @@
+#NOTE The 1.0 API is deprecated and scheduled to be terminated as of 6/30/17.  Support for this library should be assumed to be terminated as of that date.#
+
 *phxDropboxLib v1.13*
 
 Converted to a script-only-stack and dumped the binary pieces.
