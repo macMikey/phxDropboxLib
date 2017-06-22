@@ -1,4 +1,4 @@
-# NOTE The 1.0 API is deprecated and scheduled to be terminated as of 6/30/17.  Support for this library should be assumed to be terminated as of that date. #
+# NOTE The 1.0 API is deprecated and scheduled to be terminated as of 6/30/17.  Support for this library should be assumed to be terminated as of that date.   It is included with LC9-dp7.  If you are using LC8, I have the library in a repo [here](https://github.com/macMikey/LCDropboxLibrary) #
 
 *phxDropboxLib v1.13*
 
